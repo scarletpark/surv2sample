@@ -31,10 +31,11 @@ surv2.ks(x, group, process = "w", approx = "lwy", nsim = 2000,
   to be returned (for possible plotting). Must be at most \code{nsim}.}
 }
 \details{
-The function implements tests based on functionals of the difference
-\eqn{U(t)=\hat A_2(t)-\hat A_1(t)}{U(t)=A_2(t)-A_1(t)}, where
-\eqn{\hat A_j(t)}{A_j(t)} are Nelson--Aalen estimates. This process
-(properly normalised) is asymptotically a Brownian motion in transformed
+The function implements tests based on functionals of the logrank
+process \eqn{U(t)} (which is the process of logrank statistics computed
+from observations in \eqn{(0,t)}, see Section 7.5 of Fleming and
+Harrington (1991)). This process (properly normalised) is
+asymptotically a Brownian motion in transformed
 time. If \code{process} is \code{"w"}, the supremum (KS) and integral
 (CM, AD) test statistics are computed from this process.
 If \code{process} is \code{"b"}, the tests are instead based on the

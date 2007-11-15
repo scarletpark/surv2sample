@@ -10,7 +10,7 @@ censored data with several competing risks (types of failure).
 \method{plot}{cif}(x, by = "group", aggreg.cif = TRUE, orient = "land",
      lwds = 1, cols = 1, ltys = if ((by == "cause") || (by == "c"))
      rep(1:6, len = x$ngroups) else 1, xlab = "", ylab = "",
-     ylim, mfrow, mfcol, main, ...)
+     ylim, mfrow, mfcol, mains, ...)
 }
 \arguments{
   \item{x}{an object of class \code{"cif"}, as returned by \code{\link{cif}}.}
@@ -32,8 +32,10 @@ censored data with several competing risks (types of failure).
   \item{ylim}{limits on the vertical axis. If missing, determined automatically.}
   \item{mfrow, mfcol}{parameters determining the arrangement of
   plots, passed to \code{par}.}
-  \item{main}{the main title for plots. If missing, titles for
-  plots are automatically produced.}
+  \item{mains}{the main title(s) for plots. If missing, titles for
+  plots are automatically produced. If \code{mains} is present, it
+  must be of length equal to the number of plots or 1 (in which case it
+  is replicated).}
   \item{\dots}{other standard parameters for plotting.}
 }
 \author{David Kraus (\url{http://www.davidkraus.net/})}

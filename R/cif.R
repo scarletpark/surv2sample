@@ -61,7 +61,7 @@ print.cif = function(x,...)
 
 plot.cif = function(x,by="group",aggreg.cif=TRUE,orient="land",lwds=1,cols=1,
 	ltys=if ((by=="cause")||(by=="c")) rep(1:6,len=x$ngroups) else 1,xlab="",ylab="",
-	ylim,mfrow,mfcol,main,...)
+	ylim,mfrow,mfcol,mains,...)
 {
 	if (!inherits(x,"cif"))
 		stop("must be an object of class 'cif'")
@@ -103,6 +103,12 @@ plot.cif = function(x,by="group",aggreg.cif=TRUE,orient="land",lwds=1,cols=1,
 		else
 			par(mfrow=mfr)
 	
+	if (!missing(mains)) {
+		if (length(mains)==1)
+			mains = rep(mains,np) # replicate the same title for all plots
+		else
+			if (length(mains)!=np) stop("wrong length of 'mains'")
+	}
 	if (b==1) { # by group
 		for (k in 1:x$ngroups) {
 			xx = c(0,x[[k]]$time)
@@ -112,7 +118,7 @@ plot.cif = function(x,by="group",aggreg.cif=TRUE,orient="land",lwds=1,cols=1,
 			}
 			# ylim automatically determined for each plot, or all plots will have the same ylim
 			if (missing(ylim)) yl = 1.07*range(yy) else yl = ylim
-			multiplot(xx,yy,ylim=yl,main=ifelse(missing(main),paste("Group",k),main),
+			multiplot(xx,yy,ylim=yl,main=ifelse(missing(mains),paste("Group",k),mains[k]),
 				lwds=lwds,cols=cols,ltys=ltys,...)
 		}
 	} else { # by cause
@@ -125,7 +131,7 @@ plot.cif = function(x,by="group",aggreg.cif=TRUE,orient="land",lwds=1,cols=1,
 			for (k in 1:x$ngroups) ylim = range(c(ylim,x[[k]]$f[,j]))
 			ylim = 1.07*ylim
 			plot(x[[1]]$time,x[[1]]$f[,j],type="s",lwd=lwds[1],col=cols[1],lty=ltys[1],
-				xlab=xlab,ylab=ylab,ylim=ylim,main=ifelse(missing(main),paste("Cause",j)),...)
+				xlab=xlab,ylab=ylab,ylim=ylim,main=ifelse(missing(mains),paste("Cause",j),mains[j]),...)
 			if (x$ngroups>1) {
 				for (k in 2:x$ngroups)
 					lines(x[[k]]$time,x[[k]]$f[,j],type="s",lwd=lwds[k],col=cols[k],lty=ltys[k],...)

@@ -26,7 +26,7 @@ risks data based on pseudovalues of the cumulative incidence function.
 The original dataset was obtained from the website of 
 Biometrics (\url{http://biometrics.tibs.org/}), where it is available
 as supplementary material to Klein and Andersen's paper (direct link:
-\url{http://biometrics.tibs.org/datasets/031209.txt}).
+\url{http://biometrics.tibs.org/datasets/031209.txt}). 
 This is a subset (1607 observations) of the original dataset (1715),
 108 cases with mismatched unrelated donors were omitted.
 }

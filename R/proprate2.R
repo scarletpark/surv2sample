@@ -109,7 +109,7 @@ print.proprate2.fit = function(x, digits=max(3,getOption("digits")-3),...)
 
 coef.proprate2.fit = function(object, ...)
 {
-	if (!inherits(fit,"proprate2.fit"))
+	if (!inherits(object,"proprate2.fit"))
 		stop("must be an object of class 'proprate2.fit'")
 	object$beta
 }
