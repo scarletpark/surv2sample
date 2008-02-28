@@ -14,13 +14,13 @@ The package provides tests for comparing two survival
 
 }
 \details{
-\tabular{ll}{
-Package: \tab surv2sample\cr
-Type: \tab Package\cr
-Version: \tab 0.1-0\cr
-Date: \tab 2007-11-08\cr
-License: \tab GPL 2 or newer\cr
-}
+%\tabular{ll}{
+%Package: \tab surv2sample\cr
+%Type: \tab Package\cr
+%Version: \tab 0.1-1\cr
+%Date: \tab 2007-11-15\cr
+%License: \tab GPL (>= 2)\cr
+%}
 The package implements many two-sample tests for right-censored
 survival data. Three main areas and corresponding methods are:
 \itemize{

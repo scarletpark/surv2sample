@@ -69,6 +69,9 @@ void twosample_incidence_ks(int *event, int *group, int *n, int *nsim,
 			*/
 		}
 		for (j=*nsim_plot; j<*nsim; j++) {
+			for (i=0; i<*n; i++) {
+				g[i] = norm_rand();
+			}
 			/* compute the resampled test process with pooled sample f01 */
 			twosample_incidence_lwy_process(event, group, n, y1, y2, f01, f12, f01, f22,
 				g, test_process_sim);
