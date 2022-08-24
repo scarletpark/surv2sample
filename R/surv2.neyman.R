@@ -74,7 +74,7 @@ surv2.neyman = function(x, group, data.driven=FALSE, subsets="nested",
 	
 	penalty = log(n)
 	
-	temp = .C("twosample_neyman",
+	temp = .C(".../src/twosample_neyman",
 		as.double(tim),
 		as.integer(evt),
 		as.integer(grp),
