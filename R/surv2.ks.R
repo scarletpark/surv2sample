@@ -48,7 +48,7 @@ surv2.ks = function(x, group, process="w", approx="lwy", nsim=2000, nsim.plot=50
 		nperm.plot = nlwy.plot = 0
 	}
 	
-	temp = .C("twosample_ks_cm_ad",
+	temp = .C(".../src/twosample_ks_cm_ad",
 		as.double(tim),
 		as.integer(evt),
 		as.integer(grp),
